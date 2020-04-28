@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodejspod
+spec:
+  selector:
+    matchLabels:
+      run: nodejspod
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: nodejspod
+    spec:
+      containers:
+      - name: nodejspod
+        image: eswarvarunkanchi/nodejspod
+        ports:
+        - containerPort: 8081
